@@ -2,24 +2,25 @@
   <div class="container">
     <LoginPage />
   </div>
-
 </template>
 
 <script>
 import LoginPage from './views/LoginPage.vue';
+
 export default {
   name: 'App',
-  components: { LoginPage},
-  };
+  components: { LoginPage },
+};
 </script>
 
 <style>
-body{
+body {
   background-color: black;
   color: white;
 }
 
-.container{
+
+.container {
   height: 100vh;
   display: flex;
   flex-direction: column;
