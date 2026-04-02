@@ -27,16 +27,18 @@ body {
   align-items: center;
 }
 
-.logo-container{
+.logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
-.logo{
+
+.logo {
   max-width: 60px;
   height: auto;
 }
+
 .button {
   border-radius: 20px;
   border: 1px solid white;
@@ -46,5 +48,11 @@ body {
   padding: 10px;
   width: 100%;
   cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  font-size: small;
+  width: 100%;
 }
 </style>
