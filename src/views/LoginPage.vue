@@ -33,7 +33,7 @@ export default {
                 alert("모든 필드를 입력해주세요.")
                 return
             }
-            this.$router.push("/main")
+            this.$router.push("/main");
         }
     },
 }
