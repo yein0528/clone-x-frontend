@@ -1,36 +1,27 @@
 <template>
   <div class="feed-list-container">
-    <div v-for="feed in feedStore.feedData" :key="feed.id" class="feed-container">
-      <div class="feed-header">
-        <strong>{{ feed.user.name }}</strong>
-        <small>{{ feed.id }}</small>
-      </div>
-
-      <div class="feed-content">
-        {{ feed.content }}
-      </div>
-
-      <div class="feed-name">
-        {{ new Date(feed.created_at).toLocaleDateString() }}
-      </div>
-    </div>
+    <FeedItem v-for="feed in feedStore.feedData" :key="feed.id" :feed="feed" class="feed-container">
+    </FeedItem>
   </div>
 </template>
 
 
 <script>
 import { useFeedStore } from '@/store/feed';
-
+import FeedItem from './FeedItem.vue';
 
 export default {
   name: "FeedList",
+  components: {
+    FeedItem
+  },
   data() {
     return {
       feedStore: useFeedStore(),
     }
   },
   created() {
-    this.feedStore.setInitialFeeds();
+    this.feedStore.getFeedData();
   }
 };
 </script>

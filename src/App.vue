@@ -1,13 +1,22 @@
 <template>
   <div class="container">
+    <vue3-confirm-dialog></vue3-confirm-dialog>
     <router-view />
   </div>
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   name: 'App',
+  methods: {
+    fetchData() {
+      axios.get('/api/data')
+        .then(response => {
+          console.log(response.data)
+        })
+    }
+  }
 
 };
 </script>
